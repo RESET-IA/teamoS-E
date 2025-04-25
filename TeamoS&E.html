@@ -1,0 +1,262 @@
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body, html {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+    position: relative;
+  }
+
+  .collage-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .collage-bg div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1; /* mantiene proporción uniforme */
+    overflow: hidden;
+  }
+
+  .collage-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: float 18s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%   { transform: scale(1) translate(0, 0); }
+    50%  { transform: scale(1.05) translateY(-6px); }
+    100% { transform: scale(1) translate(0, 0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .mensaje {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(230, 90, 90, 0.85);
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 600px;
+    animation: aparecer 2s ease-out;
+  }
+
+  .mensaje h1 {
+    color: #030302;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .mensaje p {
+    font-size: 20px;
+    color: #080101;
+    line-height: 1.6;
+  }
+
+  @keyframes aparecer {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+  }
+
+  .boton-cambio {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #c0392b;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.boton-cambio:hover {
+  background-color: #e74c3c;
+}
+
+/* Animaciones múltiples para variación visual */
+@keyframes float1 {
+  0%   { transform: scale(1) rotate(0deg) translateY(0); }
+  50%  { transform: scale(1.05) rotate(1deg) translateY(-6px); }
+  100% { transform: scale(1) rotate(0deg) translateY(0); }
+}
+
+@keyframes float2 {
+  0%   { transform: scale(1) rotate(0deg) translateY(0); }
+  50%  { transform: scale(1.07) rotate(-1deg) translateY(-4px); }
+  100% { transform: scale(1) rotate(0deg) translateY(0); }
+}
+
+@keyframes float3 {
+  0%   { transform: scale(1) rotate(0deg) translateY(0); }
+  50%  { transform: scale(1.03) rotate(1.5deg) translateY(-8px); }
+  100% { transform: scale(1) rotate(0deg) translateY(0); }
+}
+
+/* COLLAGE GENERAL */
+.collage-bg {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* Responsive para pantallas medianas */
+@media (max-width: 992px) {
+  .collage-bg {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .collage-bg {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  .mensaje {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .mensaje h1 {
+    font-size: 22px;
+  }
+
+  .mensaje p {
+    font-size: 16px;
+  }
+
+  .boton-cambio {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+/* Extra small (mobile portrait) */
+@media (max-width: 480px) {
+  .collage-bg {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+  }
+
+  .mensaje {
+    padding: 20px 15px;
+    max-width: 95%;
+  }
+
+  .mensaje h1 {
+    font-size: 18px;
+  }
+
+  .mensaje p {
+    font-size: 14px;
+  }
+
+  .boton-cambio {
+    font-size: 13px;
+    padding: 8px 16px;
+    bottom: 20px;
+  }
+}
+
+</style>
+
+<!-- Collage desde carpeta local con tamaño uniforme -->
+<div class="collage-bg">
+  <div><img src="IMAGENES/c7aec80c-d172-405d-be48-780bc17d615e.jpeg" alt=""></div>
+  <div><img src="IMAGENES/31a43c39-4f87-43d8-9b98-91f7ac6b280c.jpeg" alt=""></div>
+  <div><img src="IMAGENES/7876a248-34fb-4643-bac0-9ed48e41d122.jpeg" alt=""></div>
+  <div><img src="IMAGENES/a7032396-cc11-4dae-9f37-916d7f7b25f7.jpeg" alt=""></div>
+  <div><img src="IMAGENES/5.jpeg" alt=""></div>
+  <div><img src="IMAGENES/1.jpeg" alt=""></div>
+  <div><img src="IMAGENES/2.jpeg" alt=""></div>
+  <div><img src="IMAGENES/acae6560-5e79-4f76-9967-2273e98bf867.jpeg" alt=""></div>
+  <div><img src="IMAGENES/3.jpeg" alt=""></div>
+  <div><img src="IMAGENES/4.jpeg" alt=""></div>
+</div>
+
+
+  <!-- 💌 Mensaje romántico -->
+  <div class="mensaje">
+    <h1>Mi resentido precioso, mi mayor amor verdadero</h1>
+    <p>
+      No hay collage más hermoso que la vida a tu lado...<br>
+      Gracias por pintar mi alma con los colores del amor eterno. ❤️
+    </p>
+  </div>
+
+  <!-- 🎶 Música de fondo -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/30/audio_4b7990a809.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML.
+  </audio>
+<!-- 💌 Mensaje romántico -->
+<div class="mensaje" id="mensajePrincipal">
+  <h1 id="tituloMensaje">Estefany y Santiago, mi mayor verdad</h1>
+  <p id="textoMensaje">
+    No hay collage más hermoso que la vida a su lado...<br>
+    Gracias por pintar mi alma con los colores del amor eterno. ❤️
+  </p>
+</div>
+
+<!-- 🔄 Botón para cambiar dedicatoria -->
+<button class="boton-cambio" onclick="cambiarDedicatoria()">💖 Ver otra dedicatoria</button>
+<script>
+  let mensajeAlternativo = false;
+
+  function cambiarDedicatoria() {
+    const titulo = document.getElementById("tituloMensaje");
+    const texto = document.getElementById("textoMensaje");
+
+    // Animación de salida rápida
+    texto.style.opacity = 0;
+    titulo.style.opacity = 0;
+
+    setTimeout(() => {
+      if (!mensajeAlternativo) {
+        titulo.textContent = "Santiago, mi historia favorita";
+        texto.innerHTML = "Desde que llegaste a mi vida, entendí que el amor se construye con momentos, miradas y silencios...<br>Y eres el capítulo más bonito de mi existencia. 💫";
+      } else {
+        titulo.textContent = "Mi resentido precioso, mi mayor amor verdadero";
+        texto.innerHTML = "No hay collage más hermoso que la vida a tu lado...<br>Gracias por pintar mi alma con los colores del amor eterno. ❤️";
+      }
+
+      // Alternar estado y animar de nuevo
+      mensajeAlternativo = !mensajeAlternativo;
+      texto.style.opacity = 1;
+      titulo.style.opacity = 1;
+    }, 500);
+  }
+</script>
+</body>
+</html>
